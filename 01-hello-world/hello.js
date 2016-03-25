@@ -1,11 +1,6 @@
-goog.provide('example')
+goog.require('goog.dom');
 
-goog.require('example.templates')
-goog.require('goog.dom')
-
-example.sayHello = function(message) {
-    var data = {greeting: message, year: new Date().getFullYear()}
-    var html = example.templates.welcome(data)
-    goog.dom.getElement('hello').innerHTML = html
+function sayHi() {
+    var newHeader = goog.dom.createDom('h1', {'style': 'background-color:#EEE'}, 'Hello world!');
+    goog.dom.appendChild(document.body, newHeader);
 }
-
