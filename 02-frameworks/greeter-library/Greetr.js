@@ -6,8 +6,75 @@
         return new Greetr.init(firstname, lastname, language);
     }
 
+    // These objects are not exposed to the outside world, it's in the memory space of this IIFE
+    // only. However you can use these inside the objects because of their lexical environment.
+    var supportedLangs = ['en', 'es', 'fi'];
+
+    var greetings = {
+        en: 'Hello',
+        es: 'Hola',
+        fi: 'Moi'
+    };
+
+    var formalGreetings = {
+        en: 'Greetings',
+        es: 'Saludos',
+        fi: 'Hei'
+    };
+
+    var logMessages = {
+        en: 'Logged in',
+        es: 'Inció sesión',
+        fi: 'Kirjattiin'
+    };
+
     //Create a prototype object containing functions a Greetr object can use.
-    Greetr.prototype = {};
+    Greetr.prototype = {
+        fullname: function() {
+            return this.firstname + ' ' + this.lastname;
+        },
+
+        validate: function() {
+            if (supportedLangs.indexOf(this.language) === -1) {
+                throw 'Invalid language';
+            }
+        },
+
+        greeting: function() {
+            return greetings[this.language] + ' ' + this.firstname + '!';
+        },
+
+        formalGreeting: function() {
+            return formalGreetings[this.language] + ', ' + this.fullname() + '.';
+        },
+
+        greet: function(formal) {
+            var msg = formal ? this.formalGreeting() : this.greeting();
+            
+            if (console) {
+                console.log(msg);
+            }
+
+            // Make the function chainable.
+            return this;
+        },
+
+        log: function() {
+            if (console) {
+                console. log(logMessages[this.language] + ': ' + this.fullname());
+            }
+
+            return this;
+        },
+
+        setLang: function(lang) {
+            this.language = lang;
+            this.validate();
+
+            return this;
+        }
+
+    };
 
     // Create the Greetr object.
     Greetr.init = function(firstname, lastname, language) {
