@@ -1,6 +1,7 @@
 (function(global, $) {
 
-    // Return a new object using new keyword, so a programmer doesn't need to type it every time.
+    // Return a new object using new function constructor, so a programmer doesn't need to type it
+    // every time.
     var Greetr = function(firstname, lastname, language) {
         return new Greetr.init(firstname, lastname, language);
     }
@@ -10,6 +11,8 @@
 
     // Create the Greetr object.
     Greetr.init = function(firstname, lastname, language) {
+        // Use self instead of this to avoid inconsistencies to where this points to inside
+        // closures.
         var self = this;
 
         self.firstname = firstname || '';
