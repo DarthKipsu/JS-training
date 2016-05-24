@@ -1,4 +1,5 @@
-(function(global, $) {
+// add a semicolon in case another library used doesn't finish it's semicolons properly.
+;(function(global, $) {
 
     // Return a new object using new function constructor, so a programmer doesn't need to type it
     // every time.
@@ -48,11 +49,13 @@
             return formalGreetings[this.language] + ', ' + this.fullname() + '.';
         },
 
+        greetingMsg: function(formal) {
+            return formal ? this.formalGreeting() : this.greeting();
+        },
+
         greet: function(formal) {
-            var msg = formal ? this.formalGreeting() : this.greeting();
-            
             if (console) {
-                console.log(msg);
+                console.log(this.greetingMsg(formal));
             }
 
             // Make the function chainable.
@@ -72,6 +75,16 @@
             this.validate();
 
             return this;
+        },
+
+        // Add creeting to a given jQuery html selector.
+        htmlGreeting: function(selector, formal) {
+            if (!$) throw 'jQuery not loaded';
+            if (!selector) throw 'Missing jQuery selector';
+
+            $(selector).html(this.greetingMsg(formal));
+
+            return this;
         }
 
     };
@@ -85,6 +98,8 @@
         self.firstname = firstname || '';
         self.lastname = lastname || '';
         self.language = language || 'en';
+
+        self.validate();
     }
 
     // Point newly greated objects prototype to Greetr.prototype, so it will have all the functions
