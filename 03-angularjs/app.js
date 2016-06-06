@@ -40,14 +40,18 @@ app.controller('forecastController', ['$scope', '$resource', 'cityService', func
             {callback: 'JSON_CALLBACK'},
             {get: {method: 'JSONP'}});
     
-    
-
     $scope.weatherResult = $scope.weatherAPI.get({
         q: $scope.city,
         cnt: 2,
         appid: OPENWEATHERMAP_APIKEY});
 
-    console.log($scope.weatherResult);
-    console.log($scope.city);
+    $scope.convertToCelcius = function(degK) {
+        return Math.round(degK - 273.15);
+    }
+
+    $scope.convertToDate = function(date) {
+        // Date in milliseconds within the API
+        return new Date(date * 1000);
+    }
 
 }]);
