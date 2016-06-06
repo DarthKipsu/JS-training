@@ -10,6 +10,9 @@ app.config(function($routeProvider) {
         .when('/forecast', {
             templateUrl: 'pages/forecast.html',
             controller: 'forecastController'})
+        .when('/forecast/:days', {
+            templateUrl: 'pages/forecast.html',
+            controller: 'forecastController'})
 });
 
 // SERVICES
@@ -31,9 +34,12 @@ app.controller('homeController', ['$scope', 'cityService', function($scope, city
 
 }]);
 
-app.controller('forecastController', ['$scope', '$resource', 'cityService', function($scope, $resource, cityService) {
+app.controller('forecastController', ['$scope', '$resource', '$routeParams', 'cityService',
+        function($scope, $resource, $routeParams, cityService) {
     
     $scope.city = cityService.city;
+
+    $scope.days = $routeParams.days || 3;
 
     $scope.weatherAPI = $resource(
             '//api.openweathermap.org/data/2.5/forecast/daily',
@@ -42,7 +48,7 @@ app.controller('forecastController', ['$scope', '$resource', 'cityService', func
     
     $scope.weatherResult = $scope.weatherAPI.get({
         q: $scope.city,
-        cnt: 2,
+        cnt: $scope.days,
         appid: OPENWEATHERMAP_APIKEY});
 
     $scope.convertToCelcius = function(degK) {
