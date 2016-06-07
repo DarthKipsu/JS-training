@@ -39,7 +39,7 @@ app.controller('forecastController', ['$scope', '$resource', '$routeParams', 'ci
     
     $scope.city = cityService.city;
 
-    $scope.days = $routeParams.days || 3;
+    $scope.days = $routeParams.days || '3';
 
     $scope.weatherAPI = $resource(
             '//api.openweathermap.org/data/2.5/forecast/daily',
