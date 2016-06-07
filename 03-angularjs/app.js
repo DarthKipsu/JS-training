@@ -61,3 +61,10 @@ app.controller('forecastController', ['$scope', '$resource', '$routeParams', 'ci
     }
 
 }]);
+
+// DIRECTIVES
+app.directive('weatherReport', function() {
+    return {
+        templateUrl: 'components/weather_report.html' 
+    }
+});

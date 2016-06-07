@@ -7,14 +7,5 @@ Days: <a href="#/forecast/3" ng-class="{'bg-primary': days === '3'}">3</a>
 <hr />
 
 <div ng-repeat="weather in weatherResult.list">
-  <div class="row">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">{{ convertToDate(weather.dt) | date : 'd. MMM y' : timezone }}</h3>
-      </div>
-      <div class="panel-body">
-        Daytime temperature: {{ convertToCelcius(weather.temp.day) }}°C
-      </div>
-    </div>
-  </div>
+  <weather-report></weather-report>
 </div>
