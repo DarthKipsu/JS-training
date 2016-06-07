@@ -1,4 +1,5 @@
-app.controller('homeController', ['$scope', 'cityService', function($scope, cityService) {
+app.controller('homeController', ['$scope', '$location', 'cityService',
+        function($scope, $location, cityService) {
     
     $scope.city = cityService.city;
 
@@ -6,5 +7,8 @@ app.controller('homeController', ['$scope', 'cityService', function($scope, city
         cityService.city = $scope.city;
     });
 
+    $scope.submit = function() {
+        $location.path('/forecast');
+    }
 
 }]);
