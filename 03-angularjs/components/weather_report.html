@@ -1,10 +1,10 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ convertToDate(weather.dt) | date : 'd. MMM y' : timezone }}</h3>
+      <h3 class="panel-title">{{ convertToDate({ date: weather.dt }) | date : dateFormat }}</h3>
     </div>
     <div class="panel-body">
-      Daytime temperature: {{ convertToCelcius(weather.temp.day) }}°C
+      Daytime temperature: {{ convertToStandard({ temp: weather.temp.day }) }}°C
     </div>
   </div>
 </div>

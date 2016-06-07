@@ -7,5 +7,10 @@ Days: <a href="#/forecast/3" ng-class="{'bg-primary': days === '3'}">3</a>
 <hr />
 
 <div ng-repeat="weather in weatherResult.list">
-  <weather-report></weather-report>
+  <weather-report
+    weather="weather"
+    convert-to-standard="convertToCelcius(temp)"
+    convert-to-date="convertToDate(date)"
+    date-format="d. MMM y">
+  </weather-report>
 </div>
