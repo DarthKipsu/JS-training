@@ -1,19 +1,11 @@
-app.controller('forecastController', ['$scope', '$resource', '$routeParams', 'cityService',
-        function($scope, $resource, $routeParams, cityService) {
+app.controller('forecastController', ['$scope', '$routeParams', 'cityService', 'weatherService',
+        function($scope, $routeParams, cityService, weatherService) {
     
     $scope.city = cityService.city;
 
     $scope.days = $routeParams.days || '3';
 
-    $scope.weatherAPI = $resource(
-            '//api.openweathermap.org/data/2.5/forecast/daily',
-            {callback: 'JSON_CALLBACK'},
-            {get: {method: 'JSONP'}});
-    
-    $scope.weatherResult = $scope.weatherAPI.get({
-        q: $scope.city,
-        cnt: $scope.days,
-        appid: OPENWEATHERMAP_APIKEY});
+    $scope.weatherResult = weatherService.getWeather($scope.city, $scope.days);
 
     $scope.convertToCelcius = function(degK) {
         return Math.round(degK - 273.15);
