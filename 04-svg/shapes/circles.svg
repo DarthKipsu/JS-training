@@ -1,13 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="250px" height="220px">
+<svg xmlns="http://www.w3.org/2000/svg" width="500px" height="220px">
   <circle cx="80" cy="50" r="40"/>
-
   <circle cx="80" cy="110" r="40" fill="red"/>
-
   <circle cx="80" cy="170" r="40"
   fill="yellow" stroke="blue" />
-
   <circle cx="80" cy="160" r="20" fill="red" stroke="black" stroke-width="10"/>
-
   <circle cx="140" cy="110" r="60" fill="none" stroke="#579" stroke-width="30"
   stroke-dasharray="3,5,8,13" />
+
+  <g transform="translate(200,0)">
+    <ellipse cx="80" cy="110" rx="75" ry="105" fill="#538"/>
+    <ellipse cx="80" cy="110" rx="60" ry="40" fill="black" stroke="red" stroke-width="25"/>
+    <ellipse cx="80" cy="110" rx="35" ry="20" fill="#538" stroke="yellow" stroke-width="25"/>
+    <ellipse cx="80" cy="50" rx="40" ry="30" fill="red" stroke="black" stroke-width="25"/>
+    <ellipse cx="80" cy="50" rx="30" ry="20" fill="orange" stroke="red" stroke-width="10"/>
+    <ellipse cx="80" cy="170" rx="40" ry="30" fill="yellow" stroke="orange" stroke-width="25" />
+    <ellipse cx="80" cy="170" rx="30" ry="20" fill="red" stroke="black" stroke-width="10"/>
+  </g>
+
+  <g transform="translate(320,0)">
+    <ellipse cx="80" cy="110" rx="75" ry="105" fill="#538" />
+    <ellipse cx="80" cy="110" rx="60" ry="40" fill="black" stroke="red" stroke-width="25" stroke-dasharray="3,6" />
+    <ellipse cx="80" cy="110" rx="35" ry="20" fill="#538" stroke="yellow" stroke-width="25" stroke-dasharray="3,6" />
+    <ellipse cx="80" cy="50" rx="40" ry="30" fill="red" stroke="black" stroke-width="25" stroke-dasharray="3,6" />
+    <ellipse cx="80" cy="50" rx="30" ry="20" fill="orange" stroke="red" stroke-width="10" />
+    <ellipse cx="80" cy="170" rx="40" ry="30" fill="yellow" stroke="orange" stroke-width="25" stroke-dasharray="3,6" />
+    <ellipse cx="80" cy="170" rx="30" ry="20" fill="red" stroke="black" stroke-width="10" />
+  </g>
+
 </svg>
