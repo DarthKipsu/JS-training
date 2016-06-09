@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520px" height="250px">
+  <path d="M 50,100 150,200 50,150" />
+  <path d="M 100 50 L 200 150 100 100" fill="none" stroke="black" />
+  <path d="M 150 0 L 250 100 150 50 z" fill="none" stroke="black" />
+
+  <g transform="translate(300,0)">
+    <path fill="orange"
+    d="M 0,170 200,170 100,0 z
+    M 0,52 200,52 100,227 z"
+    stroke="purple" stroke-width="3"/>
+  </g>
+</svg>
