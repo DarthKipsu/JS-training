@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="500px" height="200px">
+
+  <clipPath id="star" >
+    <path d = "M 204 247 24 189 135 343 135 152 24 306 z" transform="translate(10, -180)"/>
+  </clipPath>
+
+  <image xlink:href='yoda.jpg' y="20" x="10" id="yoda" width="45%" height="50%" clip-path="url(#star)"/>
+
+  <rect id="rectangle" x="0%" y="35" height="40%" width="100%" fill="#734" opacity=".4"/>
+
+  <clipPath id="rec">
+    <use xlink:href="#rectangle"/>
+  </clipPath>
+
+  <use xlink:href="#yoda" clip-path="url(#rec)" transform="translate(416,0) scale(-1,1)"/>
+
+</svg>
