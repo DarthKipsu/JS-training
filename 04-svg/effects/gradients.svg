@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="500px" height="150px">
+     width="500px" height="300px">
 
   <linearGradient id="linear">
     <stop offset="0" stop-color="white"/>
@@ -11,8 +11,26 @@
     <stop offset="1" stop-color="black"/>
   </radialGradient>
 
-  <path d="M 100 110 200 110 150 10 z" stroke="black" stroke-width="2" fill="url(#linear)"/>
-  <path d="M 100 110 200 110 150 10 z" stroke="black" stroke-width="2" fill="url(#radial)"
-      transform="translate(200,0)"/>
+  <linearGradient id="linear-stops">
+    <stop offset="0" stop-color="white"/>
+    <stop offset=".25" stop-color="black"/>
+    <stop offset=".75" stop-color="white"/>
+    <stop offset="1" stop-color="black"/>
+  </linearGradient>
 
+  <radialGradient id="radial-stops">
+    <stop offset="0" stop-color="white"/>
+    <stop offset=".25" stop-color="black"/>
+    <stop offset=".75" stop-color="white"/>
+    <stop offset="1" stop-color="black"/>
+  </radialGradient>
+
+  <path d="M 50 110 150 110 100 10 z" stroke="black" stroke-width="2" fill="url(#linear)"/>
+  <path d="M 50 110 150 110 100 10 z" stroke="black" stroke-width="2" fill="url(#radial)"
+      transform="translate(250,0)"/>
+
+  <rect x="0" y="150" height="100" width="200" stroke="black" stroke-width="2"
+      fill="url(#linear-stops)"/>
+  <rect x="0" y="150" height="100" width="200" stroke="black" stroke-width="2"
+      fill="url(#radial-stops)" transform="translate(250,0)"/>
 </svg>
