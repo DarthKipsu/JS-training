@@ -55,6 +55,11 @@
                 createTooltip(c);
                 $('path#' + c.id + '.land').hover(displayHoverBox(c), removeHoverBox(c));
                 $('#tt' + c.id).hover(displayHoverBox(c), removeHoverBox(c));
+                $(document).keyup(function(e) {
+                    if (e.which == 27) {
+                        $('.tt').hide();
+                    }
+                });
             });
         }
     };
