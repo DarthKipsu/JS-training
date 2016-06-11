@@ -48,6 +48,7 @@
             this.visited.countries.forEach(function(c) {
                 $('path#' + c.id + '.land').css({ fill: 'green' });
             });
+            $('#count').html(this.visited.countries.length);
         },
 
         addMouseHoverEffects: function() {
