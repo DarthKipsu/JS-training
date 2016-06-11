@@ -1,7 +1,16 @@
 .land {
-  fill: #CCCCCC;
+  fill: #CCC;
   fill-opacity: 1;
-  stroke:white;
+  stroke: #fff;
   stroke-opacity: 1;
-  stroke-width:0.5;
+  stroke-width: 0.5;
+}
+
+.tt {
+  background-color: #fff;
+  padding: 8px 16px;
+}
+
+.title {
+  font-weight: 700;
 }
