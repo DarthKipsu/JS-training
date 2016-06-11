@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+width="610px" height="250px">
+
+  <filter id="sharpen">
+    <feConvolveMatrix order="3" 
+      kernelMatrix="
+         1 -1  1
+        -1 -1 -1
+         1 -1  1" />
+  </filter>
+
+  <filter id="edge">
+    <feConvolveMatrix order="3" 
+      kernelMatrix="
+        -1 -1 -1
+        -1  7 -1
+        -1 -1 -1"/>
+  </filter>
+
+  <image id="yoda" xlink:href="yoda.jpg" width="300" height="200" filter="url(#sharpen)"/>
+  <text x="100" y="220" font-size="16">Sharpen</text>
+  
+  <image id="yoda" x="310" xlink:href="yoda.jpg" width="300" height="200" filter="url(#edge)"/>
+  <text x="450" y="220" font-size="16">Edge</text>
+
+</svg>
